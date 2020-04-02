@@ -1,0 +1,177 @@
+ /* *************************
+ .               DEFAULT
+ ************************** */
+
+body{
+     margin: 0;
+     background-color: hsl(160, 100%, 45%);
+     font-family: Verdana, Arial, sans-serif;
+     font-size: 14px;
+}
+
+/* *********************************
+.               HEADER SECTION
+********************************** */
+
+#header{
+     margin: 10px;
+     padding: 10px;
+     background-color: hsl(160, 100%, 35%);
+     height: 100px;
+}
+
+/* *********************************
+.               NAVBAR SECTION
+********************************** */
+
+#navbar ul{
+     text-align: center;
+     list-style-type: none;
+     margin: 10px;
+     padding: 10px;
+     background-color: hsl(160, 100%, 35%);
+}
+
+#navbar ul li{
+     display: inline;
+}
+
+#navbar ul li a{
+     text-decoration: none;
+     color: white;
+     padding: .2em 1em;
+}
+
+
+#navbar ul li a:hover{
+     text-decoration: none;
+     color: black;
+     padding: .2em 1em;
+     background-color: white;
+}
+
+/* *********************************
+.               MAIN SECTION
+********************************** */
+.main{
+     margin: 10px;
+     margin-right: 270px;
+     padding: 10px;
+     background-color: hsl(160, 100%, 70%);
+     font-size: 110%;
+}
+
+#elsa-anna{
+     float: left;
+     padding: 10px;
+     clear: left;
+}
+#moana{
+     float: right;
+     padding: 10px;
+     clear: both;
+}
+#venellope{
+     float: left;
+     padding: 10px;
+     clear: both;
+}
+
+.main img{
+     width: 200px;
+}
+
+/* *********************************
+     SIDE-RIGHT (SIDEBAR) SECTION
+********************************** */
+.side-right{
+     margin: 10px;
+     margin-top: 0;
+     padding: 10px;
+     background-color: hsl(160, 100%, 70%);
+
+     box-sizing: border-box;
+     width: 250px;
+     text-indent: 0px;
+     float: right;
+}
+
+.img-right{
+     margin: 10px;
+     margin-top: 0;
+
+     width: 250px;
+     float: right;
+     clear: both;
+}
+
+
+/* *********************************
+.               FOOTER SECTION
+********************************** */
+#footer{
+     margin: 10px;
+     padding: 20px;
+     text-align: center;
+     clear: both;
+     background-color: hsl(160, 100%, 35%);
+     line-height: 1px;
+
+     color: hsl(360, 100%, 95%);
+}
+
+
+#footer ul{
+     list-style-type: none;
+     margin: 10px;
+     padding: 10px;
+     background-color: hsl(160, 100%, 35%);
+}
+
+#footer ul li{
+     display: inline;
+}
+
+#footer ul li a{
+     text-decoration: none;
+     color: white;
+     padding: .2em 1em;
+}
+
+
+#footer ul li a:hover{
+     text-decoration: none;
+     color: black;
+     padding: .2em 1em;
+     background-color: white;
+}
+
+/* *******************************
+.     HEADINGS and PARAGRAPHS
+******************************* */
+h1{
+     font-size: 120%;
+     color: hsl(360, 100%, 40%);
+}
+
+
+h3{
+     font-size: 250%;
+     text-align: center;
+     font-family: "Century Gothic", Arial, sans-serif;
+     color: hsl(360, 100%, 100%);
+     text-shadow: 3px 3px 0 hsl(360, 100%, 35%);
+     margin: 0;
+
+     position: relative;
+     top: 50%;
+
+     -webkit-transform: translateY(-50%);
+     transform: translateY(-50%);;
+}
+
+
+p{
+     text-align: justify;
+     text-indent: 50px;
+}
