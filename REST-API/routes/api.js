@@ -8,7 +8,13 @@ router.get('/', (req, res, next)=>{
 
 //POST request
 router.post('/', (req, res, next)=>{
-    res.send({request: 'POST'});
+    res.send({
+        request: 'POST',
+        name: req.body.name,
+        founder: req.body.founder,
+        year: req.body.year
+
+    });
 });
 
 //PUT request

@@ -1,11 +1,15 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 //setting up express app
 const app = express();
 
 //--------------------middlewares
 
-//routes handling middlewares
+//body-parser middleware
+app.use(bodyParser.json());
+
+//routes handling middleware
 app.use('/bladers', require('./routes/api'));
 
 //-------------------------------
