@@ -23,7 +23,11 @@ router.put('/:id', (req, res, next)=>{
 
 //DELETE request
 router.delete('/:id', (req, res, next)=>{
-    res.send({request: 'DELETE'});
+   Faang.findOneAndDelete({name: req.params.id})
+    .then((deletedItem)=>{
+        res.send(deletedItem);
+    })
+    .catch(next);
 });
 
 
