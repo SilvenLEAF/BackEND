@@ -18,7 +18,13 @@ router.post('/', (req, res, next)=>{
 
 //PUT request
 router.put('/:id', (req, res, next)=>{
-    res.send({request: 'PUT'});
+    Faang.findOneAndUpdate({name: req.params.id}, req.body)
+        .then(()=>{
+            Faang.findOne({name: req.params.id})
+                .then((updatedItem)=>{
+                    res.send(updatedItem);
+                })
+        }).catch(next);
 });
 
 //DELETE request
