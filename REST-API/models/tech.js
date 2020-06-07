@@ -20,7 +20,7 @@ const TechSchema = new Schema({
 
 //------------------------MODELS
 //create FAANG model
-module.exports.FAANG = mongoose.model('faang', TechSchema);
+module.exports.Faang = mongoose.model('faang', TechSchema);
 
 //create LANG model
-module.exports.LANG = mongoose.model('lang', TechSchema);
+module.exports.Lang = mongoose.model('lang', TechSchema);

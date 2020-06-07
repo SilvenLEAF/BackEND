@@ -1,5 +1,8 @@
 const router = require('express').Router();
-
+//          -----models
+const Faang = require('../models/tech').Faang;
+const Lang = require('../models/tech').Lang;
+//          -----------
 
 //GET request
 router.get('/', (req, res, next)=>{
@@ -8,16 +11,9 @@ router.get('/', (req, res, next)=>{
 
 //POST request
 router.post('/', (req, res, next)=>{
-    try{
-        res.send({
-            request: 'POST',
-            name: req.body.name,
-            founder: req.body.founder,
-            year: req.body.year
-    
-        });
-    }
-    catch(next){next()}
+   Faang.create(req.body).then((savedItem)=>{
+       res.send(savedItem);
+   }).catch(next);
 });
 
 //PUT request

@@ -1,8 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 //setting up express app
 const app = express();
+
+//connect to database
+mongoose.connect('mongodb://localhost/TechFoundersDB', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false});
 
 //--------------------middlewares
 
