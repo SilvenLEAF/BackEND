@@ -5,8 +5,10 @@ const Lang = require('../models/tech').Lang;
 //          -----------
 
 //GET request
-router.get('/', (req, res, next)=>{
-    res.send({request: 'GET'});
+router.get('/:id', (req, res, next)=>{
+    Faang.findOne({name: req.params.id}).then((foundItem)=>{
+        res.send(foundItem);
+    }).catch(next);
 });
 
 //POST request
