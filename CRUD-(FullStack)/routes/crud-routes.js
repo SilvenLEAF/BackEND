@@ -12,7 +12,8 @@ router.get('/', (req, res, next)=>{
 })
 
 router.post('/', (req, res, next)=>{
-    res.send('POST');
+    console.log(req.body);
+    res.send({request: 'POST', data: req.body});
 })
 
 router.put('/', (req, res, next)=>{
