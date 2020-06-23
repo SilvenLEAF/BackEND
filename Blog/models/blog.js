@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 ............................... */
 const BlogSchema = new Schema({
     name: String,
-    message: [String]
+    message: String
 });
 
 const Blog = mongoose.model('blogpiece', BlogSchema);

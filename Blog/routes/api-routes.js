@@ -1,3 +1,4 @@
+
 /* ...............................DB */
 const Blog = require('../models/blog');
 
@@ -5,10 +6,15 @@ const Blog = require('../models/blog');
 const router = require('express').Router();
 
 router.get('/', (req, res)=>{
-    res.send(`This is a GET request`);
+    console.log(req.params.Name);
+    
+    res.send(req.body);
+    // res.redirect('/');
 });
 
 router.post('/', (req, res)=>{
+    console.log(req.body)
+
     Blog.create(req.body)
         .then((createdItem)=>{
             res.send(createdItem);

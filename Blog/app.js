@@ -1,8 +1,12 @@
+const fs = require('fs');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const app = express();
+app.use('/stylesURL', express.static(__dirname + '/client/stylesFOL'));
+app.use('/scriptsURL', express.static(__dirname + '/client/scriptsFOL'));
 
 
 /* ...............................
@@ -28,6 +32,11 @@ app.use(bodyParser.json());
 
 //--------------routes handling
 app.use('/api', require('./routes/api-routes'));
+
+app.get('/', (req, res)=>{
+    const myReadStream = fs.createReadStream(__dirname + '/client/index.html', 'utf8');
+    myReadStream.pipe(res);
+});
 
 //--------------errors handling
 app.use((err, req, res, next)=>{
