@@ -1,7 +1,23 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
+
+
+/* ...............................
+.     connecting to database
+............................... */
+mongoose.connect('mongodb+srv://AlvenLEAF:shenl0ng@blog-jxovm.mongodb.net/BlogDB?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+}, ()=>{
+    console.log('Connected to MongoDB');
+});
+
+
 
 
 /* ...............................

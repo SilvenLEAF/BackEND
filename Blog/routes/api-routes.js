@@ -1,3 +1,7 @@
+/* ...............................DB */
+const Blog = require('../models/blog');
+
+// -----------------------------------
 const router = require('express').Router();
 
 router.get('/', (req, res)=>{
@@ -5,7 +9,10 @@ router.get('/', (req, res)=>{
 });
 
 router.post('/', (req, res)=>{
-    res.send({alert: `This is a POST request`, body: req.body});
+    Blog.create(req.body)
+        .then((createdItem)=>{
+            res.send(createdItem);
+        });
 });
 
 router.put('/', (req, res)=>{
