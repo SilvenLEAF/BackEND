@@ -9,7 +9,7 @@ const postNameInput = document.querySelector('#post-name-input');
 const postMessageInput = document.querySelector('#post-message-input');
 const submitBtn = document.querySelector('#submit-btn');
 
-submitBtn.addEventListener('click', (e)=>{
+postForm.addEventListener('submit', (e)=>{
     e.preventDefault();
 
     const nameValue = postNameInput.value;
