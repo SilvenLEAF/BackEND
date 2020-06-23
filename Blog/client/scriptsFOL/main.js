@@ -1,3 +1,7 @@
+const name =  document.querySelector('#name');
+const message =  document.querySelector('#message');
+
+
 const getForm =  document.querySelector('#get-form');
 const postForm =  document.querySelector('#post-form');
 
@@ -20,5 +24,13 @@ submitBtn.addEventListener('click', (e)=>{
             name: nameValue,
             message: messageValue
         })
+    }).then( res =>{
+        return res.json();
+    }).then((data)=>{
+        console.log(data);
+        name.textContent = data.name;
+        message.textContent = data.message;
+    }).catch(err=>{
+        console.log(err);
     })
 })
