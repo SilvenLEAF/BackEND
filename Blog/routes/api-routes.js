@@ -1,16 +1,34 @@
-
 /* ...............................DB */
 const Blog = require('../models/blog');
 
 // -----------------------------------
 const router = require('express').Router();
 
+
+
+
 router.get('/', (req, res)=>{
-    console.log(req.params.Name);
-    
-    res.send(req.body);
-    // res.redirect('/');
+    console.log(req.query.getName);
+
+    Blog.findOne({name: req.query.getName})
+        .then((foundItem)=>{
+            console.log(foundItem);
+            res.render('index', { data: foundItem});
+        })
+
 });
+
+
+
+
+
+
+// router.get('/', (req, res)=>{
+//     console.log(req.params.Name);
+    
+//     res.send(req.body);
+//     // res.redirect('/');
+// });
 
 router.post('/', (req, res)=>{
     console.log(req.body)

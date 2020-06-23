@@ -30,12 +30,23 @@
         </form>
        
         <div class="data">
-            <h2 id="name">
-                SilvenLEAF
-            </h2>
-            <div id="message">
-                Helllo there my beautiful World
-            </div>
+            
+            <% if(data){ %>
+                <h2 id="name"><%= data.name %></h1>
+                <div id="message"><%= data.message %></div>
+            <% }  else{ %>
+                <h2 id="name">SilvenLEAF</h1>
+                    <div id="message">Welcome to my beautiful world!!!</div>
+            <% } %>
+            
+
+            <!-- <% if(data){ %>
+                <h2 id="name"><%= data.name %></h1>
+            <% }  else{ %>
+                <h2 id="name">SilvenLEAF</h1>
+            <% } %> -->
+
+            
         </div>
         
         
