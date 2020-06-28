@@ -5,7 +5,9 @@ const Blog = require('../models/blog');
 const router = require('express').Router();
 
 
-
+/* --------------------
+.      routes
+-------------------- */
 
 router.get('/', (req, res)=>{
     console.log(req.query.getName);
