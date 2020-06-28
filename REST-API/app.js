@@ -8,8 +8,9 @@ const app = express();
 //connect to database
 mongoose.connect('mongodb://localhost/TechFoundersDB', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false});
 
-//--------------------middlewares
-
+/* --------------------
+.      middlewares
+-------------------- */
 //body-parser middleware
 app.use(bodyParser.json());
 
@@ -24,7 +25,11 @@ app.use((err, req, res, next)=>{
 
 //-------------------------------
 
-//listening for requests
+
+
+/* --------------------
+.        Listen 
+-------------------- */
 app.listen(3000, ()=>{
     console.log('Now listening for requests from the port 3000');
 });
