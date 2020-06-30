@@ -1,6 +1,11 @@
 const router = require('express').Router();
 const fs = require('fs');
 
+
+
+/* ------------------------------
+.           routes
+------------------------------ */
 router.get('/', (req, res, next)=>{
     try{
         //send HTML (Stream + Pipe)
