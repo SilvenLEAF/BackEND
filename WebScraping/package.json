@@ -1,0 +1,21 @@
+{
+  "name": "webscraping",
+  "version": "1.0.0",
+  "description": "Scraping the Web",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Scraping",
+    "Web",
+    "Puppeteer",
+    "JavaScript"
+  ],
+  "author": "SilvenLEAF",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^5.2.1"
+  }
+}
