@@ -1,1 +1,1 @@
-const { webScrape, takeScreenshot } = require('./scrapeFunctions');
+const { webScrape, takeScreenshot, downloadPDF } = require('./scrapeFunctions');
