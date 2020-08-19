@@ -13,7 +13,7 @@ router.get('/google', passport.authenticate('google', {
 
 
 // callback route for google to redirect to
-router.get('/google/redirect', (req, res)=>{
+router.get('/google/redirect', passport.authenticate('google'), (req, res)=>{
   res.json(`You reached the Cliff's end!`)
 })
 

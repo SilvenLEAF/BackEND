@@ -15,7 +15,7 @@ passport.use(
   },
   (accessToken, refreshToken, profile, done)=>{
     // passport callback function
-    console.log(`Hi`)
+    console.log(profile)
   })
 
 )
