@@ -1,5 +1,21 @@
 const router = require('express').Router();
+const passport = require('passport');
 
+
+
+
+
+// auth with google
+router.get('/google', passport.authenticate('google', {
+  scope: ['profile']
+}))
+
+
+
+// callback route for google to redirect to
+router.get('/google/redirect', (req, res)=>{
+  res.json(`You reached the Cliff's end!`)
+})
 
 
 
