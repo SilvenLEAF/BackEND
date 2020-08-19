@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const { users } = require('./data');
+const { authUser } = require('./basicAuth')
 
 
 
@@ -17,7 +18,7 @@ app.get('/', (req, res)=>{
   res.send(`Home page!`)
 })
 
-app.get('/dashboard', (req, res)=>{
+app.get('/dashboard', authUser, (req, res)=>{
   res.send(`Dashboard page!`)
 })
 
