@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGODB_STRING, {
 
 
 // passport configuration
-//require('./config/passport')(passport);
+require('./config/passport')(passport);
 
 
 
