@@ -11,7 +11,8 @@ const express = require('express');
 const passport = require('passport');
 
 // const FacebookStrategy = require('passport-facebook').Strategy;
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
+// const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const AmazonStrategy = require('passport-amazon').Strategy;
 
 
 /* -------------------------------------
@@ -28,10 +29,10 @@ passport.deserializeUser((user, cb)=>{
 /* -------------------------------------
 .            Google Strategy
 ------------------------------------- */
-passport.use( new GoogleStrategy({
-  clientID: keys.GOOGLE.clientID,
-  clientSecret: keys.GOOGLE.clientSecret,
-  callbackURL: '/auth/google/callback'
+passport.use( new AmazonStrategy({
+  clientID: keys.AMAZON.clientID,
+  clientSecret: keys.AMAZON.clientSecret,
+  callbackURL: '/auth/amazon/callback'
 },
   (accessToken, refreshToken, profile, cb)=>{
     console.log(chalk.blue(JSON.stringify(profile)));
@@ -53,11 +54,11 @@ passport.use( new GoogleStrategy({
 /* -------------------------------------
 .                 routes
 ------------------------------------- */
-app.get('/auth/google', passport.authenticate('google', {
+app.get('/auth/amazon', passport.authenticate('amazon', {
   scope: ['profile']
 }) )
-app.get('/auth/google/callback',
-  passport.authenticate('google'),
+app.get('/auth/amazon/callback',
+  passport.authenticate('amazon'),
   (req, res)=>{
     res.redirect('/profile');
   }
