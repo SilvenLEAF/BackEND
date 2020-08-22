@@ -9,7 +9,9 @@ let user = {}
 
 const express = require('express');
 const passport = require('passport');
-const FacebookStrategy = require('passport-facebook').Strategy;
+
+// const FacebookStrategy = require('passport-facebook').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 
 /* -------------------------------------
@@ -24,12 +26,12 @@ passport.deserializeUser((user, cb)=>{
 })
 
 /* -------------------------------------
-.            Facebook Strategy
+.            Google Strategy
 ------------------------------------- */
-passport.use( new FacebookStrategy({
-  clientID: keys.FACEBOOK.clientID,
-  clientSecret: keys.FACEBOOK.clientSecret,
-  callbackURL: '/auth/facebook/callback'
+passport.use( new GoogleStrategy({
+  clientID: keys.GOOGLE.clientID,
+  clientSecret: keys.GOOGLE.clientSecret,
+  callbackURL: '/auth/google/callback'
 },
   (accessToken, refreshToken, profile, cb)=>{
     console.log(chalk.blue(JSON.stringify(profile)));
@@ -51,9 +53,11 @@ passport.use( new FacebookStrategy({
 /* -------------------------------------
 .                 routes
 ------------------------------------- */
-app.get('/auth/facebook', passport.authenticate('facebook') )
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook'),
+app.get('/auth/google', passport.authenticate('google', {
+  scope: ['profile']
+}) )
+app.get('/auth/google/callback',
+  passport.authenticate('google'),
   (req, res)=>{
     res.redirect('/profile');
   }
