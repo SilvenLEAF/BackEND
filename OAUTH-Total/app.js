@@ -13,7 +13,8 @@ const passport = require('passport');
 // const FacebookStrategy = require('passport-facebook').Strategy;
 // const GoogleStrategy = require('passport-google-oauth20').Strategy;
 // const AmazonStrategy = require('passport-amazon').Strategy;
-const InstagramStrategy = require('passport-instagram').Strategy;
+// const InstagramStrategy = require('passport-instagram').Strategy;
+const GithubStrategy = require('passport-github').Strategy;
 
 
 /* -------------------------------------
@@ -28,12 +29,12 @@ passport.deserializeUser((user, cb)=>{
 })
 
 /* -------------------------------------
-.            Instagram Strategy
+.            Github Strategy
 ------------------------------------- */
-passport.use( new InstagramStrategy({
-  clientID: keys.INSTAGRAM.clientID,
-  clientSecret: keys.INSTAGRAM.clientSecret,
-  callbackURL: '/auth/instagram/callback'
+passport.use( new GithubStrategy({
+  clientID: keys.GITHUB.clientID,
+  clientSecret: keys.GITHUB.clientSecret,
+  callbackURL: '/auth/github/callback'
 },
   (accessToken, refreshToken, profile, cb)=>{
     console.log(chalk.blue(JSON.stringify(profile)));
@@ -55,11 +56,11 @@ passport.use( new InstagramStrategy({
 /* -------------------------------------
 .                 routes
 ------------------------------------- */
-app.get('/auth/instagram', passport.authenticate('instagram', {
+app.get('/auth/github', passport.authenticate('github', {
   scope: ['profile']
 }) )
-app.get('/auth/instagram/callback',
-  passport.authenticate('instagram'),
+app.get('/auth/github/callback',
+  passport.authenticate('github'),
   (req, res)=>{
     res.redirect('/profile');
   }
