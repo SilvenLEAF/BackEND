@@ -6,4 +6,4 @@ HERE I test out every new thing I learn,  and practice the concepts I'm weak at.
 
 
 ## **Important BackEND Points:**
-*NodeJS, Express, MongoDB, CRUD, API, Auth, OAUTH, RoleBasedAuth, REST*    
+*NodeJS, Express, MongoDB, CRUD, API, Auth, OAUTH, RoleBasedAuth, REST,  GraphQL, PassportJS, Socket.io*    
