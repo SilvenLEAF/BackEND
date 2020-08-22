@@ -14,7 +14,8 @@ const passport = require('passport');
 // const GoogleStrategy = require('passport-google-oauth20').Strategy;
 // const AmazonStrategy = require('passport-amazon').Strategy;
 // const InstagramStrategy = require('passport-instagram').Strategy;
-const GithubStrategy = require('passport-github').Strategy;
+// const GithubStrategy = require('passport-github').Strategy;
+const SpotifyStrategy = require('passport-spotify').Strategy;
 
 
 /* -------------------------------------
@@ -29,12 +30,12 @@ passport.deserializeUser((user, cb)=>{
 })
 
 /* -------------------------------------
-.            Github Strategy
+.            Spotify Strategy
 ------------------------------------- */
-passport.use( new GithubStrategy({
-  clientID: keys.GITHUB.clientID,
-  clientSecret: keys.GITHUB.clientSecret,
-  callbackURL: '/auth/github/callback'
+passport.use( new SpotifyStrategy({
+  clientID: keys.SPOTIFY.clientID,
+  clientSecret: keys.SPOTIFY.clientSecret,
+  callbackURL: '/auth/spotify/callback'
 },
   (accessToken, refreshToken, profile, cb)=>{
     console.log(chalk.blue(JSON.stringify(profile)));
@@ -56,11 +57,11 @@ passport.use( new GithubStrategy({
 /* -------------------------------------
 .                 routes
 ------------------------------------- */
-app.get('/auth/github', passport.authenticate('github', {
+app.get('/auth/spotify', passport.authenticate('spotify', {
   scope: ['profile']
 }) )
-app.get('/auth/github/callback',
-  passport.authenticate('github'),
+app.get('/auth/spotify/callback',
+  passport.authenticate('spotify'),
   (req, res)=>{
     res.redirect('/profile');
   }
