@@ -2,13 +2,20 @@ require('dotenv').config()
 
 const express = require('express');
 const passport = require('passport');
+const cookieSession = require('cookie-session');
 
 
 
 
 
 const app = express();
+app.use(cookieSession({
+  maxAge: 24*60*60*1000,
+  keys: ['iamthenextdragonemperor']
+}));
+
 app.use(passport.initialize());
+app.use(passport.session());
 
   
 /* -------------------------------------

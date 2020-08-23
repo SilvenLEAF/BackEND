@@ -16,12 +16,15 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 /* -------------------------------------
 .         Serialize Deserialize
 ------------------------------------- */
-passport.serializeUser((user, cb)=>{
-  cb(null, user);
+passport.serializeUser((user, done)=>{
+  done(null, user.id);  
 })
 
-passport.deserializeUser((user, cb)=>{
-  cb(null, user);
+passport.deserializeUser((id, done)=>{
+  User.findById(id).then((user)=>{
+    done(null, user);
+  })
+  // done(null, id);
 })
 
 
@@ -41,19 +44,20 @@ passport.use( new GoogleStrategy({
   clientSecret: oauthKeys.GOOGLE.clientSecret,
   callbackURL: '/auth/google/callback'
 },
-  (accessToken, refreshToken, profile, cb)=>{   
+  (accessToken, refreshToken, profile, done)=>{   
 
     User.findOne({ email: profile.emails[0].value }).then((existingUser)=>{
       if(existingUser){
         // already have the User
         console.log(`User already exists.`)
-        return cb(null, existingUser)
+        return done(null, existingUser)
       } else{
         // if not, create a user
-        User.create({ name: profile.displayName, password: 'ffffff', email: profile.emails[0].value }, (err, user)=>{
+        User.create({ name: profile.displayName, password: 'ffffff', email: profile.emails[0].value })
+        .then((newUser)=>{
           console.log(`New User created`)
-          return cb(err, user)
-        })  
+          return done(null, newUser)
+        })
       }
     })
 
