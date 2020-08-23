@@ -43,9 +43,19 @@ passport.use( new GoogleStrategy({
 },
   (accessToken, refreshToken, profile, cb)=>{   
 
-  User.create({ name: profile.displayName, password: 'ffffff', email: profile.emails[0].value }, (err, user)=>{
-    return cb(err, user)
-  })  
+    User.findOne({ email: profile.emails[0].value }).then((existingUser)=>{
+      if(existingUser){
+        // already have the User
+        console.log(`User already exists.`)
+        return cb(null, existingUser)
+      } else{
+        // if not, create a user
+        User.create({ name: profile.displayName, password: 'ffffff', email: profile.emails[0].value }, (err, user)=>{
+          console.log(`New User created`)
+          return cb(err, user)
+        })  
+      }
+    })
 
 }))
 
