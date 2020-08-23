@@ -5,7 +5,7 @@ const router = require('express').Router();
 // auth check middleware
 function isLoggedIn(req, res, next){
   if(!req.user){
-    res.redirect('/')
+    res.redirect('/login')
   } else{
     next()
   }
@@ -15,15 +15,17 @@ function isLoggedIn(req, res, next){
 .               PAGE ROUTES
 ---------------------------------------- */
 
-router.get('/', (req, res)=>{
-  res.json(`Hi. This is HOMEPAGE`);
+router.get('/', isLoggedIn, (req, res)=>{
+  res.render('Home');
 })
 
-router.get('/profile', isLoggedIn, (req, res)=>{
-  let msg = req.user || `This is your PROFILE PAGE`
-  res.json(msg);
+router.get('/profile', isLoggedIn, (req, res)=>{  
+  res.render('Profile')
 })
 
+router.get('/login', (req, res)=>{
+  res.render('Login');
+})
 
 
 

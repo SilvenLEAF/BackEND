@@ -7,8 +7,10 @@ const cookieSession = require('cookie-session');
 
 
 
-
+// firing express app and config
 const app = express();
+app.set('view engine', 'ejs')
+
 app.use(cookieSession({
   maxAge: 24*60*60*1000,
   keys: ['iamthenextdragonemperor']
