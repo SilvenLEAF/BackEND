@@ -1,14 +1,15 @@
 {
   "name": "oauth-total",
   "version": "1.0.0",
-  "description": "Learning full OAUTH",
+  "description": "Learning the complete OAUTH flow with PassportJS",
   "main": "appl.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "OAUTH",
-    "FULL"
+    "FULL", 
+    "PassportJS"
   ],
   "author": "SilvenLEAF",
   "license": "MIT",
