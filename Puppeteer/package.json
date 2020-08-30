@@ -1,0 +1,17 @@
+{
+  "name": "playing-with-puppeteer",
+  "version": "1.0.0",
+  "description": "Playing with puppeteer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Puppeteer"
+  ],
+  "author": "SilvenLEAF",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^5.2.1"
+  }
+}
