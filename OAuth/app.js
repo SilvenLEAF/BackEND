@@ -10,7 +10,7 @@ app.use(express.json());
 
 
 /* --------------------------------
-.           middlewares
+.           Routes
 -------------------------------- */
 app.use('/auth', require('./routes/authRoutes'));
 
