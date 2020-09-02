@@ -1,5 +1,5 @@
 # BackEND
-*I am learning BackEND. This is a my BackEND PlayGround. A collection for my BackEND Codes.*  
+*I am learning BackEND, the Serverside programming. This is a my Serverside BackEND PlayGround. A collection for my BackEND and Serverside Codes.*  
 
 HERE I test out every new thing I learn,  and practice the concepts I'm weak at. Sometimes even brush up my skills, or just code some BackEND for fun!!'Cause I LOVE BackEND!!! 
 
