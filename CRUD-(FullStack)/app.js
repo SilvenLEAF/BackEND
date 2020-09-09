@@ -9,7 +9,7 @@ app.use('/scriptsURL', express.static('./client/scriptsFOL'));
 
 
 /* ------------------------------
-.           middlewares
+.            routes
 ------------------------------ */
 //bodyparser
 app.use(bodyParser.json());
