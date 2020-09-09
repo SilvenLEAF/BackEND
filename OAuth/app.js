@@ -1,3 +1,4 @@
+//required modules
 const express = require('express');
 
 
@@ -10,7 +11,7 @@ app.use(express.json());
 
 
 /* --------------------------------
-.           config
+.              config
 -------------------------------- */
 
 require('./config/passportSetup');
