@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/TechFoundersDB', {useNewUrlParser: true, u
 
 
 /* --------------------
-.      middlewares
+.      routes
 -------------------- */
 
 //routes handling middleware
