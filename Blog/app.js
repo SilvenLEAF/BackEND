@@ -27,7 +27,7 @@ mongoose.connect('mongodb+srv://AlvenLEAF:shenl0ng@blog-jxovm.mongodb.net/BlogDB
 
 
 /* ...............................
-.           middlewares
+.           routes 
 ............................... */
 //----------------body parser
 app.use(bodyParser.json());
