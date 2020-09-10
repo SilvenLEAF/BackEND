@@ -4,15 +4,17 @@ const mongoose = require('mongoose');
 
 //setting up express app
 const app = express();
+app.use(express.json());
+
 
 //connect to database
 mongoose.connect('mongodb://localhost/TechFoundersDB', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false});
 
+
+
 /* --------------------
 .      middlewares
 -------------------- */
-//body-parser middleware
-app.use(bodyParser.json());
 
 //routes handling middleware
 app.use('/bladers', require('./routes/api'));
