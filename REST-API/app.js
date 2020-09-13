@@ -15,8 +15,6 @@ mongoose.connect('mongodb://localhost/FoundersOfTechInfoDB', {useNewUrlParser: t
 /* --------------------
 .      routes
 -------------------- */
-
-//routes handling middleware
 app.use('/bladers', require('./routes/api'));
 
 //error handling middleware
