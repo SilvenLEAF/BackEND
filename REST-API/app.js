@@ -8,7 +8,7 @@ app.use(express.json());
 
 
 //connect to database
-mongoose.connect('mongodb://localhost/TechFoundersDB', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false});
+mongoose.connect('mongodb://localhost/FoundersOfTechInfoDB', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false});
 
 
 
