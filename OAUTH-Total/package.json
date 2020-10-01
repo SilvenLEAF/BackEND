@@ -4,11 +4,10 @@
   "description": "Learning the complete OAUTH flow with PassportJS",
   "main": "appl.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app"
   },
   "keywords": [
     "OAUTH",
-    "FULL", 
     "PassportJS"
   ],
   "author": "SilvenLEAF",

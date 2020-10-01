@@ -1,20 +1,19 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 //setting up express app
 const app = express();
+app.use(express.json());
+
 
 //connect to database
-mongoose.connect('mongodb://localhost/TechFoundersDB', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false});
+mongoose.connect('mongodb://localhost/FoundersOfTechInfoDB', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false});
+
+
 
 /* --------------------
-.      middlewares
+.      routes
 -------------------- */
-//body-parser middleware
-app.use(bodyParser.json());
-
-//routes handling middleware
 app.use('/bladers', require('./routes/api'));
 
 //error handling middleware
@@ -30,6 +29,7 @@ app.use((err, req, res, next)=>{
 /* --------------------
 .        Listen 
 -------------------- */
-app.listen(3000, ()=>{
-    console.log('Now listening for requests from the port 3000');
+const PORT = process.env.PORT || 5000;
+app.listen(PORT , ()=>{
+    console.log(´Now listening for requests from the port &{ PORT }´);
 });

@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
+app.use(express.json());
 
 //--------client (JS + CSS) URL
 app.use('/stylesURL', express.static('./client/stylesFOL'));
@@ -9,10 +10,10 @@ app.use('/scriptsURL', express.static('./client/scriptsFOL'));
 
 
 /* ------------------------------
-.           middlewares
+.            routes
 ------------------------------ */
-//bodyparser
-app.use(bodyParser.json());
+
+
 
 //routes handling
 app.use('/crud', require('./routes/crud-routes'));

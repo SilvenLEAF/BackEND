@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 app.set('view engine', 'ejs');
+app.use(express.json());
 app.use('/stylesURL', express.static(__dirname + '/client/stylesFOL'));
 app.use('/scriptsURL', express.static(__dirname + '/client/scriptsFOL'));
 
@@ -27,11 +28,8 @@ mongoose.connect('mongodb+srv://AlvenLEAF:shenl0ng@blog-jxovm.mongodb.net/BlogDB
 
 
 /* ...............................
-.           middlewares
+.           routes 
 ............................... */
-//----------------body parser
-app.use(bodyParser.json());
-
 //--------------routes handling
 app.use('/api', require('./routes/api-routes'));
 
