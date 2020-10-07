@@ -29,4 +29,4 @@ router.delete('/', (req, res, next)=>{
     res.send('DELETE');
 })
 
-module.exports = router;
+module.exports = router
