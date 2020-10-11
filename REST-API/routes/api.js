@@ -8,14 +8,18 @@ const Lang = require('../models/tech').Lang;
 router.get('/:id', (req, res, next)=>{
     Faang.findOne({name: req.params.id}).then((foundItem)=>{
         res.send(foundItem);
-    }).catch(next);
+    }).catch(err){
+         next(err, req, res)
+     };
 });
 
 //POST request
 router.post('/', (req, res, next)=>{
    Faang.create(req.body).then((savedItem)=>{
        res.send(savedItem);
-   }).catch(next);
+   }).catch(err){
+         next(err, req, res)
+     };
 });
 
 //PUT request
@@ -26,7 +30,9 @@ router.put('/:id', (req, res, next)=>{
                 .then((updatedItem)=>{
                     res.send(updatedItem);
                 })
-        }).catch(next);
+        }).catch(err){
+         next(err, req, res)
+     };
 });
 
 //DELETE request
@@ -35,7 +41,9 @@ router.delete('/:id', (req, res, next)=>{
     .then((deletedItem)=>{
         res.send(deletedItem);
     })
-    .catch(next);
+    catch(err){
+         next(err, req, res)
+     };
 });
 
 
