@@ -8,6 +8,7 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 app.use('/stylesURL', express.static(__dirname + '/client/stylesFOL'));
 app.use('/scriptsURL', express.static(__dirname + '/client/scriptsFOL'));
 
