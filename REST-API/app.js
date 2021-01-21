@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 //setting up express app
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({extended:false}));
 
 
 //connect to database
